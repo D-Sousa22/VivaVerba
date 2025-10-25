@@ -1,0 +1,852 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #303030;
+}
+
+p {
+    font-family: 'Inter';
+}
+
+/* Header */
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Botão hamburguer */
+.hamburguer {
+    width: 45px;
+    height: 45px;
+    background: #791dcf;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburguer span {
+    width: 30px;
+    height: 5px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* Overlay escuro */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 1500;
+}
+
+/* Menu Flutuante */
+.menu-flutuante {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    width: 200px;
+    display: none;
+    flex-direction: column;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.menu-flutuante ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.menu-flutuante ul li {
+    margin: 15px 0;
+}
+
+.menu-flutuante ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 22px;
+    color: #222;
+    transition: color 0.3s;
+}
+
+.menu-flutuante ul li a:hover {
+    color: #791dcf;
+}
+
+.redes-sociais {
+    display: flex;
+    gap: 35px;
+    margin-top: 7px;
+}
+
+.redes-sociais a {
+    font-size: 29px;
+    color: #791dcf;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-sociais a:hover {
+    transform: scale(1.2);
+    color: #6C2BD9;
+}
+
+.menu-flutuante .fechar {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 15px;
+    right: 23px;
+    cursor: pointer;
+    color: #303030;
+    padding: 0;
+}
+
+.menu-flutuante .fechar .material-icons-round {
+    font-size: 31px;
+}
+
+.menu-flutuante .fechar:hover {
+    color: #6C2BD9;
+    transform: scale(1.1);
+}
+
+/* Botão Entrar */
+.botao-entrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 15px;
+    background-color: #ffffff;
+    color: #313131;
+    border: 2px solid #c8c8c8;
+    border-bottom: 5px solid #c8c8c8;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    font-size: 19px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao-entrar:hover {
+  background-color: #f7f7f7;
+}
+
+.botao-entrar img {
+    width: 14px;
+    height: auto;
+}
+
+.icone-menu img {
+    width: 45px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Área de filhos */
+.filhos {
+    margin: 20px 0;
+    padding: 0 30px;
+}
+
+.filhos h3 {
+    font-size: 25px;
+}
+
+.area-filhos {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.caixa-filho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Círculo de progresso */
+.progresso-circular {
+    width: 180px;
+    height: 180px;
+    border-radius: 60%;
+    background: conic-gradient(#791dcf 80%, #ddd 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Círculo interno */
+.progresso-interno {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avatar */
+.progresso-circular img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    border: 4px solid white;
+    background: #f2f2f2;
+}
+
+/* Botão editar */
+.botao-editar {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+/* Nome da criança */
+.nome-filho {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Caixa adicionar */
+.caixa-adicionar {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.linha-tracejada {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+}
+
+.caixa-adicionar span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    z-index: 1;
+}
+
+.nome-adicionar {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.icone-mais {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+.conquistas-container {
+  width: 48%; /* Manter 47% de largura */
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap; /* Garante que os itens que não cabem em uma linha vão para a linha seguinte */
+  justify-content: space-between; /* Distribui as conquistas uniformemente */
+ /* Espaço uniforme entre os itens */
+ align-items: center;
+}
+
+.conquistas h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.conquistas-icons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  overflow-x: auto; /* Permite a rolagem horizontal */
+    scroll-behavior: smooth; 
+
+}
+
+.conquista-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  text-align: center;
+}
+
+.conquista-item img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+.conquista-item div {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+
+
+    /* Missões Semanais */
+    .missoes-container {
+      width: 40%;
+      background-color: #f5f5f5;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .missoes h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .missao-item {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .missao-item input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+/* Estilizando os checkboxes das missões */
+.missoes-container .missao-item {
+    font-size: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Remover a aparência padrão do checkbox */
+.missoes-container .missao-item input[type="checkbox"] {
+    -webkit-appearance: none; /* Remove a aparência padrão no Safari */
+    -moz-appearance: none; /* Remove a aparência padrão no Firefox */
+    appearance: none; /* Remove a aparência padrão no Chrome e outros navegadores */
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 5px;  /* Bordas arredondadas */
+    border: 2px solid #ddd; /* Cor padrão da borda */
+    transition: background-color 0.3s, border-color 0.3s;
+    position: relative; /* Para posicionar o conteúdo */
+}
+
+/* Estilo quando o checkbox está marcado (feito) */
+.missoes-container .missao-item input[type="checkbox"]:checked {
+    background-color: transparent; /* Fundo transparente para o efeito */
+    border-color: transparent;  /* Borda transparente */
+}
+
+/* Adicionando um "check" personalizado para o checkbox marcado */
+.missoes-container .missao-item input[type="checkbox"]:checked::before {
+    content: ''; /* Não precisamos de texto aqui */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;  /* Cor do "check" */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Estilo para todas as missões terem a mesma cor da Missão 2 */
+.missoes-container .missao-item input[type="checkbox"]:checked {
+    background-color: #00b0a1; /* Cor para todas as missões */
+    border-color: #00b0a1;  /* Borda com a mesma cor */
+}
+
+/* Mudando a cor e o peso da fonte do texto quando a missão for completada */
+.missoes-container .missao-item input[type="checkbox"]:checked + label {
+    color: #00b0a1; /* Cor do texto igual à cor da Missão 2 */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Estilo para os checkboxes não marcados */
+.missoes-container .missao-item input[type="checkbox"]:not(:checked) {
+    background-color: #fff;
+    border-color: #ddd;  /* Borda cinza quando não marcado */
+}
+
+/* Cor padrão para o texto (antes de ser marcado) */
+.missoes-container .missao-item label {
+    color: #333; /* Cor padrão do texto */
+    font-weight: normal; /* Peso da fonte normal */
+}
+
+
+    .container2 {
+      display: flex;
+            justify-content: space-between;
+            padding: auto;
+            flex-wrap: wrap; /* Permite que os gráficos se ajustem na tela */
+            margin-top: 30px;
+    }
+
+    /* Ajuste de margin/padding no container das conquistas e missões */
+.conquistas-container, .missoes-container {
+    padding-top: 10px; /* Reduz o padding superior */
+    padding-bottom: 30px; /* Ajuste o padding inferior, se necessário */
+}
+
+.estatisticas-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.estatistica-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.estatistica-card .icone {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.estatistica-card .dados {
+  text-align: center;
+}
+
+.estatistica-card .valor {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.estatistica-card .descricao {
+  font-size: 14px;
+}
+
+/* Cores de fundo com gradiente */
+.purple {
+  background: linear-gradient(135deg, #9b5ef7, #7819ce); /* Roxo */
+}
+
+.blue {
+  background: linear-gradient(135deg, #5b8cee, #2568ee); /* Rosa */
+}
+
+.green {
+  background: linear-gradient(135deg, #37cebf, #0f9e90); /* Amarelo */
+}
+
+.orange {
+  background: linear-gradient(135deg, #ffb515, #f1960e); /* Azul */
+
+}
+
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px 0 0;
+            flex-wrap: wrap; /* Permite que os gráficos se ajustem na tela */
+            margin-top: 30px;
+  
+        }
+
+        /* Container do gráfico de atividade semanal */
+        .container-grafico-atividade {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 0 20px;
+            width: 60%; /* Ocupa mais espaço da tela */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+       
+        }
+
+        /* Container do gráfico de distribuição de habilidades */
+        .container-grafico-habilidades {
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 0 20px 20px;
+            width: 28%; /* Ocupa menos espaço da tela */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        
+        }
+
+        .container-grafico h3 {
+            text-align: center;
+            margin-bottom: 20px;
+           
+        }
+
+        .grafico {
+            height: 200px; /* Padrão para gráficos grandes */
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        /* Ajuste para o gráfico de pizza (menor) */
+        .grafico-pizza {
+            height: 200px; /* Menor tamanho para o gráfico de pizza */
+        }
+
+        canvas {
+            width: 100% !important;
+        }
+
+
+  
+.rodape {
+    background: linear-gradient(90deg, #6C2BD9, #9414b8);
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    flex-wrap: wrap; /* Permite que fique responsivo */
+    margin-top: 70px;
+
+}
+
+.rodape a {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    
+   
+}
+.logo-rodape {
+    display: flex;
+    align-items: center;
+}
+.logo-rodape img {
+    height: 200px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.rodape a {
+    line-height: 2.2;
+    font-weight: bold;
+}
+
+.redes-rodape a {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 7px;
+   
+}
+
+.redes-rodape img {
+    width: 20px;
+    height: auto;
+}
+
+.links-rodape a {
+    color: #fff;
+    display: block;
+    margin: 8px 0;      
+    text-decoration: none;
+    flex-direction: column; /* Alinha links verticalmente */
+   
+}
+
+.redes-rodape img {
+    width: 20px;
+    height: auto;
+}
+/* Estilo para o Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.close {
+  position: absolute;
+  top: 15px; right: 20px;
+  color: #666;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+h2 {
+          margin-top: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.avatar-selector {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.avatar-option {
+  width: 66px;              /* tamanho fixo do círculo */
+  height: 66px;
+  border-radius: 50%;       /* deixa redondo */
+  overflow: hidden;         /* corta qualquer sobra da imagem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 3px solid transparent; /* borda só aparece quando selecionado */
+  transition: transform 0.2s, border 0.2s;
+}
+
+.avatar-option:hover {
+  transform: scale(1.1);
+}
+
+.avatar-option.selected {
+  border: 3px solid #791dcf; /* borda roxa quando selecionado */
+}
+
+.avatar-option img.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* garante que a imagem preencha o círculo */
+  border-radius: 50%;
+}
+
+
+input[type="text"], 
+input[type="date"] {
+  display: block;
+  width: 100%;              /* ocupa toda a largura disponível */
+  padding: 14px;
+  font-size: 16px;
+  background-color: #f1f1f2;
+  color: #333;
+  border: 2px solid #c8c8c8;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;   /* 🔑 evita que o input ultrapasse o modal */
+}
+
+
+.buttons-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.salvar, .cancelar {
+  flex: 1;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.salvar {
+  background-color: #791dcf;
+  border: 2px solid #6319a8;
+  border-bottom: 5px solid #6319a8;
+  color: white;
+}
+
+.salvar:hover {
+  background-color: #6319a8;
+}
+
+.cancelar {
+  background-color: #fff;
+  color: #313131;
+  border: 2px solid #c8c8c8;
+  border-bottom: 5px solid #c8c8c8;
+}
+
+.cancelar:hover {
+  background-color: #f1f1f1;
+}
+
+.avatar-preview {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px auto;
+}
+
+.avatar-preview img#selectedAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Ícone cobrindo o avatar inteiro */
+.avatar-preview .edit-overlay {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* mantém redondo */
+  cursor: pointer;
+}
+
+body.modal-open {
+  overflow: hidden; /* bloqueia a rolagem */
+}
+
+
+.rodape {
+    background: linear-gradient(90deg, #6C2BD9, #9414b8);
+    color: #fff;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    flex-wrap: wrap; /* Permite que fique responsivo */
+
+}
+
+.rodape a {
+    color: #fff;
+    display: block;
+    margin: 5px 0;
+    text-decoration: none;
+    
+   
+}
+.logo-rodape {
+    display: flex;
+    align-items: center;
+}
+.logo-rodape img {
+    height: 200px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.rodape a {
+    line-height: 2.2;
+    font-weight: bold;
+}
+
+.redes-rodape a {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 7px;
+   
+}
+
+.redes-rodape img {
+    width: 20px;
+    height: auto;
+}
+
+.links-rodape a {
+    color: #fff;
+    display: block;
+    margin: 8px 0;      
+    text-decoration: none;
+    flex-direction: column; /* Alinha links verticalmente */
+   
+}
+
+.redes-rodape img {
+    width: 20px;
+    height: auto;
+}

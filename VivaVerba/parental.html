@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VivaVerba</title>
+  <link rel="stylesheet" href="css/parental.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="cabecalho">
+    <div class="logo">
+      <img src="imagens/logo.png" alt="Logo VivaVerba">
+    </div>
+    <div class="menu">
+     <a href="login.html" class="botao-entrar">
+      <img src="imagens/icone-entrar.png" alt="Ícone" />
+      <span>Entrar</span>
+    </a>
+     
+  <div class="menu">
+    <!-- Botão Hambúrguer -->
+    <div class="hamburguer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  </header>
+
+<!-- Overlay escuro -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Menu Flutuante -->
+<div class="menu-flutuante" id="menuFlutuante">
+  <button class="fechar" id="fecharMenu">
+  <span class="material-icons-round">close</span>
+</button>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="parental.html">Área Parental</a></li>
+    <li><a href="#">Sobre nós</a></li>
+    <li><a href="#">Contato</a></li>
+  </ul>
+<div class="redes-sociais">
+      <a href="https://youtube.com" target="_blank" class="youtube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://instagram.com" target="_blank" class="instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" class="facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+  </div>
+
+</div>
+
+
+    <div class="filhos">
+      <h3>Seus filhos</h3>
+      <div class="area-filhos">
+        <div class="caixa-filho">
+          <div class="progresso-circular">
+            <div class="progresso-interno">
+              <img src="imagens/dinossauro.png" alt="Avatar da criança">
+            </div>
+             <div class="botao-editar" onclick="openEditModal()">✎</div>
+          </div>
+          <div class="nome-filho">Antony</div>
+        </div>
+
+        <div class="caixa-filho">
+          <button style="border: none; background: none;" class="caixa-adicionar">
+            <svg class="linha-tracejada" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="55" fill="none" stroke="#999" stroke-width="4" stroke-dasharray="10 15" stroke-linecap="round"/>
+            </svg>
+            <svg class="icone-mais" viewBox="0 0 100 100">
+              <line x1="50" y1="20" x2="50" y2="80" stroke="#333" stroke-width="13" stroke-linecap="round"/>
+              <line x1="20" y1="50" x2="80" y2="50" stroke="#333" stroke-width="13" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="nome-adicionar">Adicionar criança</div>
+        </div>
+      </div>
+
+<div class="modal" id="editProfileModal">
+  <div class="modal-content">
+    <h2>Editar Criança</h2>
+
+    <!-- Avatar grande com botão de editar -->
+    <div class="avatar-preview">
+  <img id="selectedAvatar" src="imagens/dinossauro.png" alt="Avatar Selecionado">
+  <img src="imagens/icon-editar.png" alt="Editar avatar" class="edit-overlay">
+</div>
+
+    <!-- Avatares pequenos -->
+    <div class="avatar-selector">
+      <div class="avatar-option" onclick="selectAvatar(this)">
+        <img src="imagens/cachorro.png" alt="Avatar Cachorro" class="avatar">
+      </div>
+      <div class="avatar-option" onclick="selectAvatar(this)">
+        <img src="imagens/dinossauro.png" alt="Avatar Dinossauro" class="avatar">
+      </div>
+      <div class="avatar-option" onclick="selectAvatar(this)">
+        <img src="imagens/unicornio.png" alt="Avatar Unicornio" class="avatar">
+      </div>
+      <div class="avatar-option" onclick="selectAvatar(this)">
+        <img src="imagens/hamster.png" alt="Avatar Hamster" class="avatar">
+      </div>
+      <div class="avatar-option" onclick="selectAvatar(this)">
+        <img src="imagens/gato.png" alt="Avatar Gato" class="avatar">
+      </div>
+    </div>
+
+    <form id="editProfileForm">
+      <label for="nome">Primeiro Nome:</label>
+      <input type="text" id="nome" name="nome" value="Antony">
+
+      <label for="data-nascimento">Data de nascimento:</label>
+      <input type="date" id="data-nascimento" name="data-nascimento" value="2000-03-08">
+
+      <div class="buttons-container">
+        <button type="button" class="salvar" onclick="saveChanges()">Salvar</button>
+        <button type="button" class="cancelar" onclick="closeEditModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+     <div class="estatisticas-container">
+  <div class="estatistica-card purple">
+    <div class="icone">
+      <i class="fas fa-clock"></i> <!-- Ícone de relógio do Font Awesome -->
+    </div>
+    <div class="dados">
+      <span class="valor">3h 25m</span>
+      <br>
+      <span class="descricao">Esta semana</span>
+    </div>
+  </div>
+
+  <div class="estatistica-card blue">
+    <div class="icone">
+      <i class="fas fa-trophy"></i> <!-- Ícone de troféu do Font Awesome -->
+    </div>
+    <div class="dados">
+      <span class="valor">4</span>
+      <br>
+      <span class="descricao">Conquistas</span>
+    </div>
+  </div>
+
+  <div class="estatistica-card green">
+    <div class="icone">
+      <i class="fas fa-star"></i> <!-- Ícone de estrela do Font Awesome -->
+    </div>
+    <div class="dados">
+      <span class="valor">890</span>
+      <br>
+      <span class="descricao">Pontos</span>
+    </div>
+  </div>
+
+  <div class="estatistica-card orange">
+    <div class="icone">
+      <i class="fas fa-chart-line"></i> <!-- Ícone de gráfico de linha do Font Awesome -->
+    </div>
+    <div class="dados">
+      <span class="valor">78%</span>
+      <br>
+      <span class="descricao">Progresso geral</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <!-- Gráfico de Atividade Semanal (Maior) -->
+    <div class="container-grafico-atividade">
+        <h3>Atividade Semanal</h3>
+        <canvas id="graficoAtividadeSemanal" class="grafico"></canvas>
+    </div>
+
+    <!-- Gráfico de Distribuição de Habilidades (Menor) -->
+    <div class="container-grafico-habilidades">
+        <h3>Distribuição de Habilidades</h3>
+        <canvas id="graficoHabilidades" class="grafico grafico-pizza"></canvas>
+    </div>
+</div>
+<div class="container2">
+    <!-- Conquistas -->
+    <div class="conquistas-container">
+      <h3>Resumo das Conquistas</h3>
+        <div class="conquistas-icons">
+              <div class="conquista-item">
+      <img src="imagens/icon_bussola.png" alt="Aventureiro Semanal" class="conquista-icon">
+      <div>Aventureiro Semanal</div>
+    </div>
+    <div class="conquista-item">
+      <img src="imagens/icon_abc.png" alt="Mestre das Palavras" class="conquista-icon">
+      <div>Mestre das Palavras</div>
+    </div>
+    <div class="conquista-item">
+      <img src="imagens/icon_book.png" alt="Leitor Iniciante" class="conquista-icon">
+      <div>Leitor Iniciante</div>
+    </div>
+    <div class="conquista-item">
+      <img src="imagens/icon_trophy.png" alt="Primeiros Passos" class="conquista-icon">
+      <div>Primeiros Passos</div>
+    </div>
+  </div>
+  
+</div>
+   <div class="missoes-container">
+    <h3>Missões semanais</h3>
+    <div class="missao-item">
+        <input type="checkbox" id="missao1" class="checkbox-conquista">
+        <label for="missao1">Faça login 5 vezes na semana</label>
+    </div>
+    <div class="missao-item">
+        <input type="checkbox" id="missao2" checked class="checkbox-conquista">
+        <label for="missao2"><span>Conquistar 3 estrelas em um jogo educativo</span></label>
+    </div>
+    <div class="missao-item">
+        <input type="checkbox" id="missao3" class="checkbox-conquista">
+        <label for="missao3">Concluir uma sequência de 3 atividades sem errar</label>
+    </div>
+    <div class="missao-item">
+        <input type="checkbox" id="missao4" class="checkbox-conquista">
+        <label for="missao4">Ler 20 páginas de um livro esta semana</label>
+    </div>
+</div>
+
+</div>
+</div>
+
+</section>
+ <!-- Rodapé -->
+  <footer class="rodape">
+    <div class="logo-rodape">
+      <img src="imagens/logo2.png" alt="Logo VivaVerba">
+    </div>
+    <div class="links-rodape">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Política de Cookies</a>
+      <a href="#">Contato</a>
+    </div>
+    <div class="redes-rodape">
+      <a>Nos siga nas redes</a>
+      <a href="#"><img src="imagens/youtube.png" alt="YouTube"> Youtube</a>
+      <a href="#"><img src="imagens/instagram.png" alt="Instagram"> Instagram </a>
+      <a href="#"><img src="imagens/facebook.png" alt="Facebook" style="width: 11px; margin-left: 3px; "> Facebook</a>
+    </div>
+  </footer>
+
+<script>
+   // Gráfico de Atividade Semanal
+    const ctxAtividade = document.getElementById('graficoAtividadeSemanal').getContext('2d');
+    
+    // Dados de atividade semanal
+    const dadosAtividade = [40, 55, 50, 45, 35, 50, 60]; // Dados de exemplo
+
+    // Determinar o valor máximo e a posição do maior valor
+    const maxAtividade = Math.max(...dadosAtividade);
+    const cores = dadosAtividade.map((valor) => valor === maxAtividade ? '#fddc5f' : '#9b5ef7'); // Amarelo para o maior valor
+
+    const graficoAtividadeSemanal = new Chart(ctxAtividade, {
+        type: 'bar',
+        data: {
+            labels: ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+            datasets: [{
+                label: 'Atividade',
+                data: dadosAtividade,
+                backgroundColor: cores, // Cor dinâmica para destacar o maior valor
+                borderColor: '#7819ce',
+                hoverBackgroundColor: '#7819ce',
+                hoverBorderColor: '#9b5ef7',
+                borderRadius: 8,
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        font: {
+                            size: 16,  // Tamanho da fonte do eixo Y
+                        }
+                    },
+                    grid: {
+                        display: false,
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            size: 16,  // Tamanho da fonte do eixo X
+                        }
+                    },
+                    grid: {
+                        display: false,
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        font: {
+                            size: 14,  // Tamanho da fonte da legenda
+                        }
+                    },
+                    display: false
+                },
+                // Removendo o título dentro do gráfico
+                title: {
+                    display: false,  // Remover o título dentro do gráfico
+                }
+            },
+        }
+    });
+
+    // Gráfico de Distribuição de Habilidades
+    const ctxHabilidades = document.getElementById('graficoHabilidades').getContext('2d');
+    const graficoHabilidades = new Chart(ctxHabilidades, {
+        type: 'pie',
+        data: {
+            labels: ['Leitura', 'Escrita', 'Raciocínio', 'Criatividade'],
+      
+            datasets: [{
+                data: [30, 25, 20, 25],
+                backgroundColor: ['#7819ce', '#1a89e5', '#fec92b', '#02bea7'],
+                borderColor: '#fff',
+                borderWidth: 2,
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+            },
+        }
+    });
+</script>
+
+<script>
+  const hamburguer = document.querySelector('.hamburguer');
+  const menuFlutuante = document.getElementById('menuFlutuante');
+  const fecharMenu = document.getElementById('fecharMenu');
+  const overlay = document.getElementById('overlay');
+
+  function abrirMenu() {
+    menuFlutuante.style.display = 'flex';
+    overlay.style.display = 'block';
+  }
+
+  function fecharMenuFunc() {
+    menuFlutuante.style.display = 'none';
+    overlay.style.display = 'none';
+  }
+
+  hamburguer.addEventListener('click', abrirMenu);
+  fecharMenu.addEventListener('click', fecharMenuFunc);
+  overlay.addEventListener('click', fecharMenuFunc);
+</script>
+<script>
+ function openEditModal() {
+  document.getElementById("editProfileModal").style.display = "flex";
+}
+
+function closeEditModal() {
+  document.getElementById("editProfileModal").style.display = "none";
+}
+
+function selectAvatar(element) {
+  // Remove seleção anterior
+  document.querySelectorAll(".avatar-option").forEach(opt => opt.classList.remove("selected"));
+  // Marca o clicado
+  element.classList.add("selected");
+}
+
+function saveChanges() {
+  const nome = document.getElementById("nome").value;
+  const data = document.getElementById("data-nascimento").value;
+  const avatar = document.querySelector(".avatar-option.selected img")?.alt || "Nenhum";
+
+  alert(`Nome: ${nome}\nData: ${data}\nAvatar: ${avatar}`);
+  closeEditModal();
+}
+
+</script>
+<script>
+  function selectAvatar(element) {
+  // Remove seleção anterior
+  document.querySelectorAll(".avatar-option").forEach(opt => opt.classList.remove("selected"));
+  // Marca o clicado
+  element.classList.add("selected");
+
+  // Atualiza o avatar grande
+  const imgSrc = element.querySelector("img").src;
+  const imgAlt = element.querySelector("img").alt;
+  document.getElementById("selectedAvatar").src = imgSrc;
+  document.getElementById("selectedAvatar").alt = imgAlt;
+}
+</script>
+<script>
+  function openEditModal() {
+  document.getElementById("editProfileModal").style.display = "flex";
+  document.body.classList.add("modal-open"); // bloqueia scroll
+}
+
+function closeEditModal() {
+  document.getElementById("editProfileModal").style.display = "none";
+  document.body.classList.remove("modal-open"); // libera scroll
+}
+</script>
+<script>
+  function openAddModal() {
+  document.getElementById("addChildModal").style.display = "flex";
+  document.body.classList.add("modal-open"); // trava scroll
+}
+
+function closeAddModal() {
+  document.getElementById("addChildModal").style.display = "none";
+  document.body.classList.remove("modal-open"); // libera scroll
+}
+
+function selectNewAvatar(element) {
+  // Remove seleção anterior
+  document.querySelectorAll("#addChildModal .avatar-option").forEach(opt => opt.classList.remove("selected"));
+  // Marca o clicado
+  element.classList.add("selected");
+
+  // Atualiza o avatar grande
+  const imgSrc = element.querySelector("img").src;
+  const imgAlt = element.querySelector("img").alt;
+  document.getElementById("newSelectedAvatar").src = imgSrc;
+  document.getElementById("newSelectedAvatar").alt = imgAlt;
+}
+
+function saveNewChild() {
+  const nome = document.getElementById("new-nome").value;
+  const data = document.getElementById("new-data-nascimento").value;
+  const avatar = document.querySelector("#addChildModal .avatar-option.selected img")?.alt || "Nenhum";
+
+  alert(`Novo filho adicionado:\nNome: ${nome}\nData: ${data}\nAvatar: ${avatar}`);
+  closeAddModal();
+}
+</script>
+</body>
+
+</html>
