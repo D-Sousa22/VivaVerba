@@ -1,0 +1,3 @@
+Jogo4 - Finalizar
+Adicionar a Api de libras onde faltar
+Jogo5 - Imagens não estão funcionando
